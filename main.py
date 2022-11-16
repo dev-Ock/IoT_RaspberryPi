@@ -4,7 +4,6 @@ from requests_toolbelt import MultipartEncoder
 
 
 def photo_image(key):
-    
     url = "http://192.168.0.16:3003/camera/image"
 
     payload = MultipartEncoder(
@@ -15,7 +14,7 @@ def photo_image(key):
 
     # print(payload)
     
-    requests.post(url,  headers = {'Content-Type': payload.content_type}, data = payload)
+    res = requests.post(url, headers = {'Content-Type': payload.content_type}, data = payload)
     if res.status_code == 200:
              print("Success!!")
     
